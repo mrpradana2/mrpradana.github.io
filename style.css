@@ -73,6 +73,7 @@ nav {
     list-style: none;
     justify-content: space-around;
     gap: 1rem;
+    margin-right: 2rem;
 }
 
 .nav-link {
