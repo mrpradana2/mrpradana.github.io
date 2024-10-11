@@ -27,6 +27,7 @@ body {
     font-family: 'myfont', 'sans-serif';
     position: relative;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body::before {
@@ -48,6 +49,7 @@ header {
     top: 0;
     right: 0;
     left: 0;
+    width: 100vw;
     background-color: var(--blue-color);
     z-index: 5;
 }
@@ -57,13 +59,13 @@ nav {
     justify-content: space-between;
     align-items: center;
     height: 5rem;
-    padding: 0 2rem;
 }
 
 .brand-img {
     text-decoration: none;
     font-size: 1.5rem;
     color: var(--milk-color);
+    margin-left: 2rem;
 }
 
 .nav-bar {
@@ -91,6 +93,7 @@ nav {
 .hamburger {
     display: none;
     cursor: pointer;
+    margin-right: 2rem;
 }
 
 .bar {
@@ -602,12 +605,12 @@ footer {
     }
 
     .nav-bar {
-        
         position: fixed;
         flex-direction: column;
         top: 5rem;
         right: -100%;
-        width: 100%;
+        left: 100%;
+        width: 100vw;
         gap: 0rem;
         background-color: var(--blue-color);
         text-align: center;
@@ -626,8 +629,10 @@ footer {
         box-sizing: content-box;
     }
     .nav-bar.active {
+        left: 0;
         right: 0;
     }
+
 
     /* header */
 
@@ -645,7 +650,7 @@ footer {
 
     .content-about-me {
         grid-area: content-about-me;
-        padding: 0 4rem 3rem;
+        padding: 0;
         text-align: center;
     }
 
@@ -653,6 +658,16 @@ footer {
         text-align: center;
         scale: 0.8;
     }
+
+    .photo-profile {
+        width: 300px;
+    }
+    .photo-profile img {
+        width: 300px;
+        height: auto;
+    }
+
+    /* footer */
 
     .footer-nav {
         position: static;
