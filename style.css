@@ -1,0 +1,687 @@
+
+:root {
+    --milk-color: #FCFAEE;
+    --orange-color: #ff7829;
+    --blue-color: #161d6f;
+    --dark-color: #0B192C;
+    --black-color: #000000;
+    --error-color: #E74378;
+    --valid-color: #05ff05;
+    --whatsapp-color: linear-gradient(to bottom left, #45EC61, #1DC93F);
+    --instagram-color: linear-gradient(to bottom left, #4F30D3, #E74378,#FAE441);
+    --linkedin-color: #0A66C2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'myfont';
+    src: url('font/Helvetica.woff') format('woff');
+}
+
+body {
+    font-family: 'myfont', 'sans-serif';
+    position: relative;
+    scroll-behavior: smooth;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(img/pattern.png);
+    background-repeat: repeat;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+/* header */
+header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: var(--blue-color);
+    z-index: 5;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+    padding: 0 2rem;
+}
+
+.brand-img {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: var(--milk-color);
+}
+
+.nav-bar {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.nav-link {
+    color: var(--milk-color);
+    text-decoration: none;  
+    transition: 300ms;
+}
+
+
+.nav-link:hover {
+    color: var(--orange-color);
+}
+
+.nav-link.active {
+    color: var(--orange-color);
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    border-radius: 10px;
+    background-color: var(--milk-color);
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+/* header */
+
+
+/* main */
+
+main {
+    width: 100%;
+    height: max-content;
+
+}
+
+.section {
+    width: 100%;
+    height: 100%;
+    padding: 5rem 2rem;
+}
+
+.section:nth-child(even) {
+    background-color: var(--blue-color);
+}
+
+.tittle-section {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+
+.section:nth-child(even) .tittle-section {
+    color: var(--milk-color);
+}
+/* about-me */
+
+#about-me {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 40%;
+    justify-items: center;
+}
+
+.content-about-me {
+    padding: 3rem 0 3rem 3rem;
+    place-content: center;
+}
+
+.text-about-me {
+    text-align: left;
+    margin: 0.5rem 0;
+}
+
+.text-welcome {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+}
+
+.text-me {
+    font-size: 2rem;
+}
+
+.name {
+    font-size: 3rem;
+} 
+
+.btn-search {
+    width: 140px;
+    height: 35px;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    background-color: var(--blue-color);
+    color: var(--milk-color);
+    box-shadow: 1px 0.8px 4px var(--dark-color);
+    margin: 1rem 0;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.btn-search:hover {
+    background-color: var(--orange-color);
+}
+
+.btn-search:active {
+    box-shadow: none;
+}
+
+.content-about-me a button{
+    margin: 2rem 0;
+}
+/* social media */
+.social-media {
+    margin-top: 2rem;
+}
+
+.label-social-media {
+    margin-top: 0.5rem;
+}
+.icons-social-media a {
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    text-decoration: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--milk-color);
+    border-radius: 50%;
+    margin: 1rem 1rem 0 0;
+    box-shadow: 0 0.8px 4px var(--dark-color);
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+.icons-social-media a.whatsapp {
+    background-image: var(--whatsapp-color);
+}
+
+.icons-social-media a.instagram {
+    background-image: var(--instagram-color);
+}
+
+.icons-social-media a.linkedin {
+    background-color: var(--linkedin-color);
+}
+
+.icons-social-media a:hover {
+    transform: translateY(-20%);
+}
+
+.icons-social-media a i {
+    z-index: 1;
+}
+
+.icons-social-media 
+a.whatsapp::before, 
+a.instagram::before, 
+a.linkedin::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: var(--blue-color);
+    transition: all 0.3s ease-in-out;
+}
+
+.icons-social-media 
+a.whatsapp.active-social::before,
+a.instagram.active-social::before,
+a.linkedin.active-social::before {
+    opacity: 0;
+}
+
+.icons-social-media a:active {
+    box-shadow: none;
+}
+/* About me */
+
+/* Resume */
+resume-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: max-content;
+    border: 1px solid #fff;
+    color: var(--milk-color);
+    padding: 1rem;
+}
+
+.resume-left, .resume-right {
+    height: max-content;
+    padding: 0 1.5rem 1.5rem;
+}
+
+.resume-left h2, .resume-right h2 {
+    margin: 1.5rem 0;
+}
+
+.resume-left p {
+    text-align: justify;
+}
+
+.resume-item {
+    height: max-content;
+}
+.line-resume-box {
+    border-left: 4px solid var(--milk-color);
+    padding: 3rem;
+    position: relative;
+    top: 2rem;
+}
+
+.line-end {
+    border-left: 4px solid transparent;
+}
+
+.list-circle {
+    width: 20px;
+    height: 20px;
+    background-color: var(--milk-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-60%, -60%);
+}
+
+.content-resume-box {
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+}
+
+.text-resume-box {
+    margin: 0.3rem 0;
+}
+
+ul.text-resume-box {
+    padding-left: 1rem;
+}
+
+.job-description {
+    margin-top: 1rem;
+}
+
+.career-history {
+    position: absolute;
+    top: 0;
+    transform: translateY(-10%);
+}
+
+
+/* Resume */
+
+
+/* sertification */
+.sertif-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+.sertif-item-box {
+    width: 320px;
+    height: max-content;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--blue-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 0.5rem;
+    transition: all 300ms ease-in-out;
+}
+
+.sertif-item-box:hover {
+    box-shadow: 1px 1px 5px var(--dark-color);
+}
+
+.sertif-item-box img {
+    width: 300px;
+}
+
+.tittle-sertif {
+    font-size: 1.3rem;
+    color: var(--milk-color);
+}
+
+.description-sertif {
+    color: var(--milk-color);
+}
+
+.description-sertif {
+    font-size: 1rem;
+    text-wrap: wrap;
+    text-align: center;
+}
+/* certification */
+
+
+/* Portofolio */
+.portofolio-area {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1.5rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.tittle-portofolio {
+    color: var(--milk-color);
+    padding: 2.2rem 1rem 1.5rem;
+}
+
+.portofolio-box-item {
+    width: max-content;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+    border: 1px solid var(--milk-color);
+    border-radius: 10px;
+    transition: all 200ms ease-out;
+}
+
+.portofolio-box-item:hover {
+    transform: scale(1.1);
+}
+.portofolio-box-item img {
+    width: 200px;
+    border-radius: 10px;
+}
+
+.description-portofolio {
+    color: var(--milk-color);
+    font-size: 0.8rem;
+    margin: 1rem 0;
+}
+
+.portofolio-box-item a button {
+    width: 4rem;
+    height: 2rem;
+    color: var(--milk-color);
+    background-color: var(--blue-color);
+    border-radius: 5px;
+    border: 1px solid var(--milk-color);
+    transition: all 200ms ease-in-out;
+    cursor: pointer;
+}
+
+.portofolio-box-item a button:hover {
+    background-color: var(--milk-color);
+    color: var(--blue-color);
+}
+
+.article {
+    display: flex;
+    align-items: start;
+    width: 100%;
+}
+
+.article h1 {
+    color: var(--milk-color);
+    text-align: left;
+    font-size: 1.2rem;
+}
+
+.article #author, #publisher {
+    color: var(--milk-color);
+    font-size: 0.8rem;
+}
+
+.article:hover {
+    transform: scale(1);
+    background-color: var(--orange-color);
+}
+
+.portofolio-area:last-child {
+    justify-content: start;
+}
+
+.portofolio-area a {
+    text-decoration: none;
+}
+
+/* Portofolio */
+
+
+/* contact-me */
+
+.contact-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: max-content;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+}
+
+.field .item {
+    width: 350px;
+    background-color: var(--milk-color);
+    outline: none;
+    border: 1px solid var(--blue-color);
+    border-radius: 10px;
+    padding: 1rem;
+    font-size: 1rem;
+    color: var(--black-color);
+}
+
+.field.error .item {
+    border: 2px solid var(--error-color);
+}
+
+.field.valid .item {
+    border: 2px solid var(--valid-color);
+}
+
+.field input::placeholder {
+    font-size: 1rem;
+}
+.field label {
+    margin: 1rem 0 0;
+}
+
+.contact-box form button {
+    width: 120px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--blue-color);
+    color: var(--milk-color);
+    outline: none;
+    box-shadow: 1px 1px 4px var(--dark-color);
+    margin-top: 1rem;
+    transition: all 200ms ease-in-out;
+}
+.contact-box form button:hover {
+    background-color: var(--orange-color);
+}
+
+.contact-box form button:active {
+    box-shadow: none;
+}
+
+.field .error-txt {
+    color: var(--error-color);
+    margin: 0.5rem 0;
+    display: none;
+}
+
+.field.error .error-txt {
+    display: block;
+}
+
+.text-area-field .item {
+    resize: none;
+}
+/* contact-me */
+
+/* main */
+
+
+
+/* footer */
+footer {
+    width: 100%;
+    height: max-content;
+    text-align: center;
+    padding: 1rem 0;
+    background-color: var(--blue-color);
+}
+
+.footer-nav {
+    display: inline-flex;
+    margin: 1rem 0;
+}
+
+.footer-social-media a {
+    box-shadow: 0 0 2px 2px var(--blue-color);   
+}
+
+.copyright {
+    color: var(--milk-color);
+    font-size: 0.8rem;
+    margin: 0.5rem 0;
+}
+
+/* footer */
+
+
+@media (max-width: 768px) {
+
+    /* header */
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px)  rotate(45deg) ;
+    }
+    
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-bar {
+        
+        position: fixed;
+        flex-direction: column;
+        top: 5rem;
+        right: -100%;
+        width: 100%;
+        gap: 0rem;
+        background-color: var(--blue-color);
+        text-align: center;
+        -webkit-transition: all 300ms ease-in-out;
+        transition: all 300ms ease-in-out;
+    }
+    .nav-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 3rem;
+    }
+
+    .nav-item:last-child{
+        padding-bottom: 1rem;
+        box-sizing: content-box;
+    }
+    .nav-bar.active {
+        right: 0;
+    }
+
+    /* header */
+
+    /* main */
+    /* about-me */
+    #about-me {
+        width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-areas: 'photo-profile' 'content-about-me';
+    }
+
+    .photo-profile {
+        grid-area: photo-profile;
+    }
+
+    .content-about-me {
+        grid-area: content-about-me;
+        padding: 0 4rem 3rem;
+        text-align: center;
+    }
+
+    .text-about-me {
+        text-align: center;
+        scale: 0.8;
+    }
+
+    .footer-nav {
+        position: static;
+        background-color: transparent;
+    } 
+
+    .footer-social-media a {
+        width: 40px;
+        height: 40px;
+    }
+    .footer-nav-item {
+        height: max-content;
+        padding: 0.4rem;
+    }
+
+    .footer-nav-item a {
+        color: var(--milk-color);
+    }
+
+    .footer-social-media a i {
+        font-size: 1.5rem;
+    }
+    
+    /* About-me */
+    
+    
+    /* Resume */
+    resume-area {
+        grid-template-columns: 1fr;
+    }
+    /* main */
+}
